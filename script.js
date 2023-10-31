@@ -107,8 +107,8 @@ function cardGuess(guess) {
   } else {
     tries--;
     if (tries === 0) {
-      endGame(document.querySelector('button'));
       tryContainer.textContent = 'You lost..';
+      setTimeout(() => endGame(document.querySelector('button')), 1500);
     } else {
       tryContainer.textContent = tries;
     }
