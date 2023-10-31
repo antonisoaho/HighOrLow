@@ -22,7 +22,6 @@ body {
 }
 .result-counter {
   width: 300px;
-  /* border: 1px solid black; */
   height: 120px;
   display: flex;
   flex-direction: column;
@@ -37,11 +36,11 @@ p {
 .card-wrapper {
   position: relative;
   perspective: 900px;
-  height: 345px;
+  height: 363px;
   width: 250px;
   border-radius: 10px;
   background: url(./cards/card-back.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   border-radius: 10px;
   box-shadow: -2px -2px 20px -6px rgba(0, 0, 0, 0.5);
@@ -100,7 +99,7 @@ p {
 
 .flip-card .card-back {
   background: url(./cards/card-back.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   border-radius: 10px;
   border: 1px solid grey;
