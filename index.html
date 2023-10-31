@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High or low</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="wrapper">
+      <article class="result-counter">
+        <button class="start-game">Start game</button>
+        <p class="points">Points: <span id="points">0</span></p>
+        <p class="loses">Tries left: <span id="tries">3</span></p>
+        <p class="cards-left">Cards left:<span id="cards-left">52</span></p>
+      </article>
+      <figure class="card-wrapper">
+        <div class="flip-card">
+          <div class="card-front"></div>
+          <div class="card-back"></div>
+        </div>
+      </figure>
+      <section class="button-wrapper">
+        <button class="lower">Lower</button>
+        <button class="even">Even</button>
+        <button class="higher">Higher</button>
+      </section>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
