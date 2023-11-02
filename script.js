@@ -93,6 +93,14 @@ function pullCard() {
   return cardValue;
 }
 
+function buttonToggler(bool) {
+  buttons.forEach((btn) => {
+    !btn.classList.contains('start-game') && !btn.classList.contains('end-game')
+      ? (btn.disabled = bool)
+      : '';
+  });
+}
+
 function cardGuess(guess) {
   prevHand = currHand;
   currHand = pullCard();
@@ -119,15 +127,18 @@ function cardGuess(guess) {
 }
 
 function startGame(button) {
+  buttonToggler(false);
   deck.createDeck(suits, values);
   deck.shuffle();
 
   deckLength = 52;
-  cardsLeft.textContent = deckLength;
   points = 0;
-  pointContainer.textContent = points;
   tries = 3;
+
+  cardsLeft.textContent = deckLength;
+  pointContainer.textContent = points;
   tryContainer.textContent = tries;
+
   currHand = pullCard();
   flipCard.classList.add('do-flip');
   button.classList.remove('start-game');
@@ -137,18 +148,22 @@ function startGame(button) {
 }
 
 function endGame(button) {
+  buttonToggler(true);
   deck = new Deck();
 
   flipCard.classList.contains('do-flip')
     ? flipCard.classList.remove('do-flip')
     : '';
+
   button.classList.contains('end-game')
     ? button.classList.remove('end-game')
     : '';
+
   button.classList.add('start-game');
   button.textContent = 'Start game';
 
   console.clear();
 }
 
+buttonToggler(true);
 endGame(document.querySelector('button'));
