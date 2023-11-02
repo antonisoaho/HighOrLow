@@ -96,7 +96,6 @@ function pullCard() {
 function cardGuess(guess) {
   prevHand = currHand;
   currHand = pullCard();
-
   if (
     (guess === 'Lower' && currHand < prevHand) ||
     (guess === 'Higher' && currHand > prevHand) ||
@@ -112,6 +111,10 @@ function cardGuess(guess) {
     } else {
       tryContainer.textContent = tries;
     }
+  }
+  if (deckLength === 0) {
+    tryContainer.textContent = 'You won!!!';
+    setTimeout(() => endGame(document.querySelector('button')), 1500);
   }
 }
 
