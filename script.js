@@ -86,10 +86,7 @@ function pullCard() {
   cardFront.style.background = `url(./cards/${card[0].value}_of_${card[0].suit}.png`;
   cardFront.style.backgroundSize = '100% 100%';
 
-  const cardValue = numbers.hasOwnProperty(card[0].value)
-    ? numbers[card[0].value]
-    : card[0].value;
-  console.log(cardValue);
+  const cardValue = numbers.hasOwnProperty(card[0].value) ? numbers[card[0].value] : card[0].value;
   return cardValue;
 }
 
@@ -151,18 +148,12 @@ function endGame(button) {
   buttonToggler(true);
   deck = new Deck();
 
-  flipCard.classList.contains('do-flip')
-    ? flipCard.classList.remove('do-flip')
-    : '';
+  flipCard.classList.contains('do-flip') ? flipCard.classList.remove('do-flip') : '';
 
-  button.classList.contains('end-game')
-    ? button.classList.remove('end-game')
-    : '';
+  button.classList.contains('end-game') ? button.classList.remove('end-game') : '';
 
   button.classList.add('start-game');
   button.textContent = 'Start game';
-
-  console.clear();
 }
 
 buttonToggler(true);
